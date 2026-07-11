@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 (Resume)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .resume-container {
+            width: 800px;
+            background-color: #ffffff;
+            display: flex;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* 왼쪽 사이드바 (프로필, 연락처 등) */
+        .sidebar {
+            width: 32%;
+            background-color: #f9f9f9;
+            padding: 40px 30px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .profile-img-container {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #ff6f00;
+            margin: 0 auto 30px auto;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-name .last-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff6f00;
+            line-height: 1.1;
+        }
+
+        .profile-name .first-name {
+            font-size: 24px;
+            color: #444;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .profile-name .job-title {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* 왼쪽 섹션 공통 */
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-section-title span {
+            color: #ff6f00;
+            margin-right: 4px;
+        }
+
+        .info-group {
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .info-value {
+            color: #777;
+            word-break: break-all;
+        }
+
+        /* 취미 아이콘 영역 스타일 */
+        .hobby-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 5px;
+        }
+
+        .hobby-item {
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .hobby-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* 오른쪽 메인 콘텐츠 */
+        .main-content {
+            width: 68%;
+            padding: 40px 40px;
+        }
+
+        .main-section {
+            margin-bottom: 40px;
+        }
+
+        .main-section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 6px;
+            margin-bottom: 25px;
+        }
+
+        .main-section-title span {
+            color: #ff6f00;
+            margin-right: 4px;
+        }
+
+        /* 타임라인 스타일 (학력, 경력) */
+        .timeline-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-date {
+            width: 90px;
+            font-size: 13px;
+            color: #444;
+            font-weight: bold;
+            padding-top: 2px;
+        }
+
+        .timeline-date .position {
+            font-size: 12px;
+            color: #777;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+
+        /* 주황색 선과 점 */
+        .timeline-marker {
+            width: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-marker::before {
+            content: '';
+            width: 2px;
+            background-color: #ffaa66;
+            position: absolute;
+            top: 0;
+            bottom: -25px; /* 다음 아이템까지 선 연결 */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item:last-child .timeline-marker::before {
+            bottom: 0; /* 마지막 아이템은 선 끊기 */
+        }
+
+        .timeline-marker::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #ff6f00;
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .institution-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .score {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .details {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* OA Skills & 자격증 2단 레이아웃 */
+        .two-column-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .sub-column {
+            width: 50%;
+        }
+
+        .sub-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .sub-title span {
+            color: #ff6f00;
+            margin-right: 4px;
+        }
+
+        /* 스킬 바 스타일 */
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .skill-bar-bg {
+            width: 100%;
+            height: 6px;
+            background-color: #eee;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background-color: #ff6f00;
+            border-radius: 3px;
+        }
+
+        /* 자격증 / 어학 스타일 */
+        .cert-group {
+            margin-bottom: 15px;
+        }
+
+        .cert-category {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .cert-row {
+            display: flex;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .cert-date {
+            width: 65px;
+            color: #777;
+        }
+
+        .cert-name {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    
+    <!-- 왼쪽 사이드바 -->
+    <div class="sidebar">
+        <!-- 프로필 이미지 (보여주기용 샘플 이미지 적용) -->
+        <div class="profile-img-container">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200" alt="프로필 사진">
+        </div>
+        
+        <!-- 이름 및 직무 -->
+        <div class="profile-name">
+            <div class="last-name">CHO</div>
+            <div class="first-name">HYUN SEOK</div>
+            <div class="job-title">Online Marketing</div>
+        </div>
+        
+        <!-- 연락처 섹션 -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title"><span>///</span> CONTACT</div>
+            
+            <div class="info-group">
+                <div class="info-label">Phone</div>
+                <div class="info-value">010-1234-5678</div>
+            </div>
+            
+            <div class="info-group">
+                <div class="info-label">Email</div>
+                <div class="info-value">Abc@naver.com</div>
+            </div>
+            
+            <div class="info-group">
+                <div class="info-label">Website / SNS</div>
+                <div class="info-value">blog.naver.com/seok830621</div>
+            </div>
+            
+            <div class="info-group">
+                <div class="info-label">Address</div>
+                <div class="info-value">경기도 구리시 인창동</div>
+            </div>
+        </div>
+        
+        <!-- 취미 섹션 -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title"><span>///</span> 취미</div>
+            <div class="hobby-container">
+                <div class="hobby-item">
+                    <div class="hobby-icon">🧳</div>
+                    <div>여행</div>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-icon">📚</div>
+                    <div>독서</div>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-icon">🎧</div>
+                    <div>음악감상</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 병역 섹션 -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title"><span>///</span> 병역</div>
+            <div class="info-group">
+                <div class="info-label" style="font-weight: normal; color: #444;">2012. 3 ~ 2013. 11</div>
+                <div class="info-value" style="color: #666; margin-top: 2px;">육군 병장 만기 제대</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 오른쪽 메인 콘텐츠 -->
+    <div class="main-content">
+        
+        <!-- 학력사항 섹션 -->
+        <div class="main-section">
+            <div class="main-section-title"><span>///</span> Education - 학력사항</div>
+            
+            <!-- 학력 1 -->
+            <div class="timeline-item">
+                <div class="timeline-date">1999-2002</div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">한국고등학교</span>
+                    </div>
+                    <div class="details">기타 기술한 내용이 있다면 이곳에</div>
+                </div>
+            </div>
+            
+            <!-- 학력 2 -->
+            <div class="timeline-item">
+                <div class="timeline-date">1999-2002</div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">한국대학교 경영학과</span>
+                        <span class="score">4.11/4.5</span>
+                    </div>
+                    <div class="details">중어중문학과 복수전공</div>
+                </div>
+            </div>
+            
+            <!-- 학력 3 -->
+            <div class="timeline-item">
+                <div class="timeline-date">1999-2002</div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">한국대학교 경영대학원</span>
+                        <span class="score">4.31/4.5</span>
+                    </div>
+                    <div class="details">
+                        마케팅 전공<br>
+                        master's thesis 석사 논문명, 2018
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 스킬 및 자격증 나란히 배치된 섹션 -->
+        <div class="main-section two-column-grid">
+            
+            <!-- OA Skills -->
+            <div class="sub-column">
+                <div class="sub-title"><span>///</span> OA SKILLS</div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">POWERPOINT</div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">PHOTOSHOP</div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">ILLUSTRATOR</div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 40%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">ADOBE PREMIERE</div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 25%;"></div></div>
+                </div>
+            </div>
+            
+            <!-- 자격증 / 어학 -->
+            <div class="sub-column">
+                <div class="sub-title"><span>///</span> 자격증 / 어학</div>
+                
+                <!-- 어학 -->
+                <div class="cert-group">
+                    <div class="cert-category">어학</div>
+                    <div class="cert-row">
+                        <div class="cert-date">TOEIC</div>
+                        <div class="cert-name">영어</div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-date">900점</div>
+                        <div class="cert-name" style="color: #999;">/ 2018.12</div>
+                    </div>
+                </div>
+                
+                <!-- 자격증 -->
+                <div class="cert-group" style="margin-top: 20px;">
+                    <div class="cert-category">자격증</div>
+                    <div class="cert-row">
+                        <div class="cert-date">2016.12</div>
+                        <div class="cert-name">자격증 1급</div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-date">2017.03</div>
+                        <div class="cert-name">자격증 1급</div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-date">2017.03</div>
+                        <div class="cert-name">자격증 1급</div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-date">2017.03</div>
+                        <div class="cert-name">자격증 1급</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- 경력사항 섹션 -->
+        <div class="main-section" style="margin-bottom: 0;">
+            <div class="main-section-title"><span>///</span> Experience - 경력</div>
+            
+            <!-- 경력 1 -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    1999-2002
+                    <div class="position">사원</div>
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">ABC 마케팅 기업</span>
+                    </div>
+                    <div class="details">온라인 홍보, 마케팅 전략기획</div>
+                </div>
+            </div>
+            
+            <!-- 경력 2 -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    1999-2002
+                    <div class="position">주임</div>
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">가나다 엔터프라이즈</span>
+                    </div>
+                    <div class="details">BTL, 마케팅 예산 기획</div>
+                </div>
+            </div>
+            
+            <!-- 경력 3 -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    1999-2002
+                    <div class="position">팀장</div>
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">123 커뮤니케이션</span>
+                    </div>
+                    <div class="details">
+                        마케팅 총괄 기획, 키워드/배너 광고<br>
+                        광고 시안 디자인
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
