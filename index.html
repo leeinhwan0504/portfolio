@@ -61,7 +61,9 @@
         .timeline-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
         .institution-name { font-size: 15px; font-weight: bold; color: #333; }
         .score { font-size: 14px; font-weight: bold; color: #333; }
-        .details { font-size: 13px; color: #666; line-height: 1.6; }
+        .details { font-size: 13px; color: #333; line-height: 1.6; }
+        .details2 { font-size: 13px; color: #666; line-height: 1.6;}
+        .details3 { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 5px;}
         .cert-group { margin-bottom: 15px; }
         .cert-category { font-size: 12px; font-weight: bold; color: #333; margin-bottom: 5px; }
         .cert-row { display: flex; font-size: 12px; color: #555; margin-bottom: 8px; }
@@ -87,6 +89,19 @@
 
 
 
+
+        .tag {
+            font-weight: bold;
+            color: #ff6f00; /* 주황색 포인트 또는 #555 어두운 회색 */
+            margin-right: 4px;
+        }
+
+        .tag2 {
+            font-weight: bold;
+            color: #666; /* 주황색 포인트 또는 #555 어두운 회색 */
+            margin-right: 4px;
+            margin-bottom: 5px;
+        }
 
         .intro-text p {
             line-height: 1.8;     /* 줄 간격 */
@@ -194,7 +209,7 @@
         </div>
         <div class="sidebar-section">
             <div class="sidebar-section-title"><span>///</span> Target Position</div>
-            <div class="info-group"><div class="info-label"> &nbsp; 자동화장비 전기제어, PLC, 시설관리</div></div>
+            <div class="info-group"><div class="info-label"> &nbsp; 자동화설비 제어, PLC, 시설관리</div></div>
         </div>
         <div class="sidebar-section">
             <div class="sidebar-section-title"><span>///</span> About Me</div>
@@ -209,10 +224,9 @@
         </div>
         <div class="sidebar-section">
             <div class="sidebar-section-title"><span>///</span> 포트폴리오</div>
-            <div class="info-value" style="font-size: 11px; color: #5c5b5b; word-break: break-all;">
-                <a href="./portfolio/portfolio.html">https://muz.so/이인환0504</a>
+            <div class="info-value" style="font-size: 13px; color: #333; word-break: break-all;">
+                <b><a href="./portfolio/portfolio.html">https://muz.so/이인환0504</a></b>
             </div>
-            
         </div>
     </div>
     
@@ -225,7 +239,7 @@
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="timeline-header"><span class="institution-name">성광고등학교</span></div>
-                    <div class="details">인문계 고등학교 </div>
+                    <div class="details">인문계 고등학교</div>
                 </div>
             </div>
             <div class="timeline-item">
@@ -244,16 +258,30 @@
                 <div class="timeline-date">2026.05.26-2026.08.04</div>
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-header"><span class="institution-name">스마트팩토리 기계설비유지관리자</span></div>
-                    <div class="details">한국폴리텍대학 남대구캠퍼스 <br> 설비보전기능사 필기합격</div>
+                    <div class="timeline-header">
+                        <span class="institution-name">스마트팩토리 기계설비유지관리자</span>
+                    </div>
+                    <div class="details">
+                        <span class="tag">[교육기관]</span> 한국폴리텍대학 남대구캠퍼스
+                    </div>
+                    <div class="details">
+                        <span class="tag">[교육성과]</span> 설비보전기능사 필기합격
+                    </div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2025.11.10-2026.05.11</div>
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-header"><span class="institution-name">전기실무 교육</span></div>
-                    <div class="details">영남기술직업전문학교 <br> 전기기능사 취득, 전기산업기사 필기합격</div>
+                    <div class="timeline-header">
+                        <span class="institution-name">전기실무 교육</span>
+                    </div>                    
+                    <div class="details">
+                        <span class="tag">[교육기관]</span> 영남기술직업전문학교
+                    </div>
+                    <div class="details">
+                        <span class="tag">[교육성과]</span> 전기기능사 취득, 전기산업기사 필기합격
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -262,8 +290,8 @@
             <div class="main-section-title"><span>///</span> 자격증</div>
             <div class="cert-group" style="margin-top: 20px;">
                  <div class="cert-row"><div class="cert-date">2026.04.10</div><span class="institution-name">전기기능사</span></div>
-                <div class="cert-row"><div class="cert-date">2026.05.24</div><div class="cert-name"><span class="institution-name">전기산업기사 </span><div class="details">(필기합격)</div></div></div>
-                <div class="cert-row"><div class="cert-date">2026.06.29</div><div class="cert-name"><span class="institution-name">설비보전기능사</span><div class="details">(필기합격)</div></div></div>
+                <div class="cert-row"><div class="cert-date">2026.05.24</div><div class="cert-name"><span class="institution-name">전기산업기사 </span><div class="details2">(필기합격)</div></div></div>
+                <div class="cert-row"><div class="cert-date">2026.06.29</div><div class="cert-name"><span class="institution-name">설비보전기능사</span><div class="details2">(필기합격)</div></div></div>
                 <div class="cert-row"><div class="cert-date">2008.08.18</div><span class="institution-name">정보처리기사</span></div>
                 <div class="cert-row"><div class="cert-date">2024.12.13</div><span class="institution-name">SQL 개발자 (SQLD)</span></div>
                 <div class="cert-row"><div class="cert-date">2009.03.</div><span class="institution-name">1종 보통운전면허</span></div>
@@ -273,29 +301,41 @@
         <div class="main-section" style="margin-bottom: 0;">
             <div class="main-section-title"><span>///</span> Experience - 경력</div>
             <div class="timeline-item">
-                <div class="timeline-date">2018.11-2025.08<div class="position">팀장</div></div>
+                <div class="timeline-date">2018.11-2025.08<div class="position">사원 → 팀장</div></div>
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="details">. 컴퓨터 프로그래밍 강의</div>
-                    <div class="details">  &nbsp;&nbsp;(파이썬, 자바, 아두이노, C언어, SQL, 데이터베이스)</div>
-                    <div class="details">. 학교 및 공공기관 프로그래밍 강의</div>
-                    <div class="details">  &nbsp;&nbsp;(산자연중학교 정보교과목 및 프로그래밍 수업 담당)</div>
-                    <div class="details">. 코딩 교육 콘텐츠 개발</div>
-                    <div class="details">. 공모전 지도</div>
+                    <div class="tag2"><span class="tag">엔스엔소프트</span><span style="font-weight: normal; color: #999; font-size: 12px;">(구 소프트웨어놀이터)</span></div>
+                    <div class="institution-name">. 컴퓨터 프로그래밍 강의</div>
+                    <div class="details3">  &nbsp;&nbsp;(파이썬, 자바, 아두이노, C언어, SQL, 데이터베이스)</div>
+                    <div class="institution-name">. 학교 및 공공기관 프로그래밍 강의</div>
+                    <div class="details3">  &nbsp;&nbsp;. 산자연중학교 정보교과목 및 프로그래밍 수업</div>
+                    <div class="details3">  &nbsp;&nbsp;. 디지털혁신진흥원 | SW핵심인재 양성과정 | JAVA 교육</div>
+                    <div class="institution-name" style="margin-bottom: 5px;">. 코딩 교육 콘텐츠 개발</div>
+                    <div class="institution-name">. 공모전 지도</div>
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">2017.12-2018.10<div class="position">팀원</div></div>
+                <div class="timeline-date">2017.12-2018.10<div class="position">사원</div></div>
                 <div class="timeline-marker"></div>
-                <div class="timeline-content"><div class="timeline-header"><span class="institution-name">소프트웨어놀이터</span></div>
-                    <div class="details">. 초, 중, 고등학생 코딩 교육.</div>
-                    <div class="details">. 코딩 교육 콘텐츠 개발</div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="tag2"><span class="tag">소프트웨어놀이터</span>
+                    </div>
+                    <div class="institution-name">. 초, 중, 고, 대학생 및 일반인 코딩 교육.</div>
+                    <div class="institution-name">. 코딩 교육 콘텐츠 개발</div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2010.11-2017.06<div class="position">점장</div></div>
                 <div class="timeline-marker"></div>
-                <div class="timeline-content"><div class="timeline-header"><span class="institution-name">외식업 프렌차이즈(유가네 닭갈비)</span></div><div class="details">. 매장 관리 및 운영</div></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="institution-name">
+                            <span class="tag">외식업 프렌차이즈(유가네 닭갈비)</span>
+                        </span>
+                    </div>
+                        <div class="institution-name">. 매장 관리 및 운영</div>
+                </div>
             </div>
         </div>
     </div>
@@ -309,12 +349,12 @@
 
         <div class="intro-text">
             <div class="intro-sub-title">1. 성장과정</div>
-            <p><b>[후드 청소부터 설비 예방 보전까지]</b></p>
+            <p><b>[매장 관리에서 자동화 제어까지]</b></p>
             
             <p>고등학교 3학년 수능을 마친 후, 2001년 1월 '유가네 닭갈비'라는 프랜차이즈 음식점에서 개업 멤버로서 첫 아르바이트를 시작했습니다. 대학에 입학한 후에도 주말이나 방학, 그리고 군 복무를 마치고 복학 전 휴학 기간에도 꾸준히 일했습니다.</p>
             <p>양산에 있는 공장에서 닭고기 정육, 양념 등 가공되지 않은 식자재를 받던 시절부터 조리만 해서 판매할 수 있는 완제품 형태의 식자재들을 받아서 운영할 때까지, 한 곳에서 오래 일했습니다. 그러다 보니 자연스럽게 위생적인 식품 관리, 유통기한을 고려한 선입선출과 식자재 발주 등 매장 관리 전반을 경험할 수 있었습니다.</p>
             <p>특히 기름때가 많이 낄 수밖에 없는 후드는 매일 청소하고 점검했으며, 테이블마다 설치된 가스레인지도 사용 빈도가 높았던 만큼 일정 주기로 점검하고 관리해 오래 사용할 수 있도록 신경 썼습니다.</p>
-            <p>이러한 경험을 통해 정해진 절차를 꾸준히 지키고, 눈에 잘 띄지 않는 부분도 놓치지 않고 미리 점검하는 습관을 몸으로 익혔습니다. 이 습관은 시간이 지나 다른 일을 하면서도 계속 남아 있었고, 지금 새롭게 준비하는 설비 유지보수 일에도 자연스럽게 이어지고 있습니다.</p>
+            <p>이러한 경험을 통해 정해진 절차를 꾸준히 지키고, 눈에 잘 띄지 않는 부분도 놓치지 않고 미리 점검하는 습관을 몸으로 익혔습니다. 이 습관은 시간이 지나 다른 일을 하면서도 계속 남아 있었고, 정밀함이 요구되는 자동화설비 유지보수 및 제작 업무에서도 중요한 기본기라고 생각합니다.</p>
             
             
             <div class="intro-sub-title">2. 경력 및 교육사항</div>
@@ -324,7 +364,7 @@
             <p>2025년 8월, 회사경영 악화로 권고사직을 하게 되었습니다. 이후 진로를 고민하던 중, 대학에서 컴퓨터공학을 전공하고 C언어와 아두이노 등을 교육했던 경험이 제어 로직을 사용하는 PLC나 공장 자동화 시스템을 이해하는 데 큰 강점이 될 수 있다는 확신이 들었습니다. 소프트웨어로 익힌 제어 흐름에 대한 이해를 바탕으로, 현장의 자동화 설비를 빠르게 배우고 적응할 수 있다고 판단하여 공장 자동화 분야로 방향을 전환하기로 결심했습니다.</p>
             <p>하지만 이 분야에서 전문성을 갖추려면 소프트웨어 능력뿐 아니라 전기 계통 지식도 필요하다고 생각했습니다.그래서 퇴사 후 2025년 11월 10일부터 2026년 5월 11일까지 영남기술직업전문학교에서 6개월간 전기수업을 받았고, 전기기능사를 취득하고 전기산업기사 필기시험에 합격했습니다.</p>
             <p>이후에는 실제 현장에서 기계를 직접 다루는 실습 경험이 필요하다고 판단했습니다. 그래서 2026년 5월 26일부터 현재까지 한국폴리텍 남대구 캠퍼스에서 PLC, 전기기초, 유공압 등 현장 중심의 스마트팩토리 기계설비 유지관리 교육을 받고 있으며, 이 과정에서 설비보전기능사 필기시험에 합격했습니다.</p>
-            <p>오랫동안 다뤄온 프로그래밍에 비하면 전기와 기계 분야는 이제 막 실무를 배워가는 단계입니다. 하지만 C언어, 파이썬, 아두이노 등을 통해 쌓은 제어 로직에 대한 이해가 있기에, 설비가 움직이는 원리를 빠르게 파악하고 업무에 조기 적응할 수 있다고 자신합니다. 그동안 쌓아온 교육 현장의 경험과 한국폴리텍에서 배운 기계 실습 내용을 바탕으로, 시설유지관리 공무 직무에서 현장의 기계·자동화 설비를 꼼꼼하게 관리하는 사원이 되겠습니다.</p>
+            <p>오랫동안 다뤄온 프로그래밍에 비하면 전기와 기계 분야는 이제 막 실무를 배워가는 단계입니다. 하지만 C언어, 파이썬, 아두이노 등을 통해 쌓은 제어 로직에 대한 이해가 있기에, 설비가 움직이는 원리를 빠르게 파악하고 업무에 조기 적응할 수 있다고 자신합니다. 그동안 쌓아온 교육 현장의 경험과 한국폴리텍에서 배운 기계 실습 내용을 바탕으로, 현장의 기계·자동화 설비를 꼼꼼하게 관리하는 사원이 되겠습니다.</p>
 
             
 
@@ -336,6 +376,11 @@
             <p>단점은 새로운 프로젝트를 시작하거나 잘 해결되지 않는 문제가 있으면 퇴근 후에도 계속 생각이 나서 고민하게 되는 것입니다. </p>
             <p>강사 시절 새로운 교육 콘텐츠 개발이나 공모전을 준비할 때도 막히는 부분이 있으면 퇴근 후에도 문제를 해결하기 위해 코드를 작성해서 테스트를 했습니다. 이러한 성향 때문에 피로감을 주기도 했지만, 전국 대회 공모전(한국코드페어)에 중등부 대상, 초등부 동상을 이끌어내는 성과를 이루기도 했습니다.</p>
         
+            <div class="intro-sub-title">4. 입사 후 포부</div>
+            <p>전기기능사, 설비보전기능사 등 그동안 쌓아온 자격과 실습 경험을 바탕으로 현장에 빠르게 적응하는 사원이 되겠습니다.
+                부족한 실무 경험은 성실한 태도와 꾸준한 학습으로 채워나가겠습니다. 작은 업무 하나도 소홀히 하지 않고, 회사에 기여할 수 있는 사원이 되겠습니다.                
+            </p>
+            <p>감사합니다.</p>
             
         </div>
     </div>
